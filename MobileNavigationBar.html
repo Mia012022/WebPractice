@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: #fff;
+    }
+
+    .navbar .brand-title {
+        font-size: 1.5rem;
+    }
+
+    .navbar .navbar-links ul {
+        list-style: none;
+        display: flex;
+    }
+
+    .navbar .navbar-links li {
+        margin-right: 1rem;
+    }
+
+    .navbar .navbar-links a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 1rem;
+    }
+
+    .toggle-button {
+        display: none;
+
+        /* flex-direction: column;
+        cursor: pointer; */
+    }
+
+    /* .toggle-button {
+        height: 3px;
+        width: 25px;
+       
+        margin: 4px 0;
+    } */
+
+    @media (max-width: 768px) {
+        .toggle-button {
+            display: block;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 25px;
+        }
+
+        .navbar {
+            display: block;
+        }
+
+        .navbar-links {
+            background-color: gray;
+        }
+
+        .navbar .navbar-links {
+            display: none;
+            width: 100%;
+        }
+
+        .navbar .navbar-links ul {
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .navbar .navbar-links li {
+            text-align: center;
+            padding: 10px;
+            margin-right: 0;
+           
+        }
+        .navbar .navbar-links li:hover {
+            background-color: lightgray;
+            
+        }
+
+        .navbar .navbar-links.active {
+            display: block;
+        }
+    }
+</style>
+
+<body>
+    <nav class="navbar">
+        <div style="padding: 9px;">
+            <a href="#" class="brand-title">My Website</a>
+        </div>
+        
+        <div class="navbar-links">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <a href="#" class="toggle-button">
+            <i class="fa fa-bars"></i>
+        </a>
+    </nav>
+
+    <script>
+        const toggleButton = document.querySelector('.toggle-button');
+        const navbarLinks = document.querySelector('.navbar-links');
+
+        toggleButton.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
