@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+#div1{
+    background-color: lightskyblue;
+    border-radius: 10px;
+    padding: 3px;
+    width: 50px;
+}
+
+</style>
+<body>
+    <div id="div1">請按我</div>
+    <div id="div2">
+        <label id="label">測試文字</label>
+    </div>
+    <script>
+        div1 = document.getElementById('div1');
+        document.getElementById('div1').addEventListener('mousedown', function () {
+            
+            this.style.display = 'none';
+
+           
+            document.getElementById('label').style.color = 'blue';
+
+           
+            alert('完成');
+        });
+
+
+    </script>
+</body>
+
+</html>
